@@ -3,6 +3,7 @@ package com.shra1.popupmenudemo;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.PopupMenu;
@@ -13,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     TextView first;
     TextView second;
     Context mCtx;
+    private Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
         first = findViewById(R.id.first);
         second = findViewById(R.id.second);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
 
         first.setOnClickListener(b -> {
             PopupMenu popupMenu = new PopupMenu(mCtx, first);
